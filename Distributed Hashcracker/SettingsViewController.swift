@@ -24,6 +24,7 @@ class SettingsViewController: NSViewController {
         } else {
             serverAdressField.stringValue = ""
             serverAdressField.enabled = true
+        
         }
         
         // TODO: Setup Server
