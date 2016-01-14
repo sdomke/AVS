@@ -26,7 +26,7 @@ class HashMD5: HashAlgorith {
             
             var digestHex = ""
             for index in 0..<Int(CC_MD5_DIGEST_LENGTH) {
-                digestHex += String(format: "%02x", digest[index])
+                digestHex += String(format: "%02hhx", digest[index])
             }
             
             return digestHex

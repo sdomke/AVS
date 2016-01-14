@@ -32,27 +32,31 @@ class SettingsViewController: NSViewController {
     
     
     @IBAction func StartButtonPressed(sender: NSButton) {
-    
+        
+        var hashAlgorith: HashAlgorith?
+        
         print(passwordField.stringValue)
         print(hashAlgorithmSelected.titleOfSelectedItem!)
         
         switch hashAlgorithmSelected.titleOfSelectedItem!{
         case "MD5":
-            let hashAlgorith: HashAlgorith = HashMD5()
-            print(hashAlgorith.hash(string: passwordField.stringValue))
+            hashAlgorith = HashMD5()
+            print(hashAlgorith!.hash(string: passwordField.stringValue))
+            //print(hashAlgorith.hash(string: passwordField.stringValue))
         
         case "SHA-128":
-            let hashAlgorith: HashAlgorith = HashSHA()
-            print(hashAlgorith.hash(string: passwordField.stringValue))
+            hashAlgorith = HashSHA()
+            print(hashAlgorith!.hash(string: passwordField.stringValue))
             
         case "SHA-256":
-            let hashAlgorith: HashAlgorith = HashSHA256()
-            print(hashAlgorith.hash(string: passwordField.stringValue))
+            hashAlgorith = HashSHA256()
+            print(hashAlgorith!.hash(string: passwordField.stringValue))
         
         default: break
         }
     
     }
+    
     
     
     override func viewDidLoad() {
